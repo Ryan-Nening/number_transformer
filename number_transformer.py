@@ -59,3 +59,7 @@ class NumberTransformerGui:
                 
             except ValueError:
                 messagebox.showerror("Data Error", "File contains invalid data. Ensure the text file only contains whole numbers.")
+
+    def run_application(self):
+        self.build_user_interface()
+        self.main_window.mainloop()            
