@@ -27,4 +27,13 @@ class NumberTransformerGui:
         self.preview_box = tkinter.Listbox(self.main_window, width=50, height=8, bg="#1e272e", fg="#ffffff", relief="flat", highlightthickness=0, font=("Courier", 10))
         self.preview_box.pack(pady=5)
 
+    def process_files(self):
+        input_file_name = filedialog.askopenfilename(title="Select Numbers File", filetypes=(("Text Files", "*.txt"), ("All Files", "*.*")))
         
+        if input_file_name != "":
+            try:
+                input_file = open(input_file_name, "r")
+                squares_file = open("squares.txt", "w")
+                cubes_file = open("cubes.txt", "w")
+                
+                self.preview_box.delete(0, tkinter.END)
