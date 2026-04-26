@@ -20,3 +20,11 @@ class NumberTransformerGui:
         
         self.process_button = tkinter.Button(self.main_window, text="🚀 Select File & Transform", font=normal_font, bg="#0984e3", fg="#ffffff", activebackground="#74b9ff", activeforeground="#ffffff", relief="flat", cursor="hand2", command=self.process_files)
         self.process_button.pack(pady=15, ipadx=10, ipady=5)
+
+        self.preview_label = tkinter.Label(self.main_window, text="Live Processing Preview:", font=normal_font, bg="#2d3436", fg="#fdcb6e") 
+        self.preview_label.pack(pady=(10, 5))
+        
+        self.preview_box = tkinter.Listbox(self.main_window, width=50, height=8, bg="#1e272e", fg="#ffffff", relief="flat", highlightthickness=0, font=("Courier", 10))
+        self.preview_box.pack(pady=5)
+
+        
