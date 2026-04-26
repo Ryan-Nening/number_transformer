@@ -37,3 +37,25 @@ class NumberTransformerGui:
                 cubes_file = open("cubes.txt", "w")
                 
                 self.preview_box.delete(0, tkinter.END)
+        
+                for current_line in input_file:
+                    if current_line.strip() == "":
+                        continue 
+                        
+                    current_number = int(current_line.strip())
+                    square_val = current_number ** 2
+                    cube_val = current_number ** 3
+                    
+                    squares_file.write(str(square_val) + "\n")
+                    cubes_file.write(str(cube_val) + "\n")
+                    
+                    self.preview_box.insert(tkinter.END, f" {current_number}  →  SQ: {square_val}  |  CB: {cube_val}")
+                    
+                input_file.close()
+                squares_file.close()
+                cubes_file.close()
+                
+                messagebox.showinfo("Success", "Transformation complete! Check your folder for squares.txt and cubes.txt.")
+                
+            except ValueError:
+                messagebox.showerror("Data Error", "File contains invalid data. Ensure the text file only contains whole numbers.")
